@@ -1,0 +1,47 @@
+config:
+  label: Condizionatori
+blocks:
+  - component: oh-grid-row
+    slots:
+      default:
+        - component: oh-grid-row
+          config: {}
+          slots:
+            default:
+              - component: oh-grid-col
+                config:
+                  large: "33"
+                  medium: "50"
+                  width: "100"
+                slots:
+                  default:
+                    - component: widget:gree_ac_widget
+                      config:
+                        deviceName: AirConditioner Room3
+                        item: groupItemAC3_room3
+              - component: oh-grid-col
+                config:
+                  large: "33"
+                  medium: "50"
+                  width: "100"
+                slots:
+                  default:
+                    - component: widget:gree_ac_widget
+                      config:
+                        deviceName: AirConditioner Room1
+                        item: groupItemAC1_room1
+              - component: oh-grid-col
+                config:
+                  large: "33"
+                  medium: "50"
+                  width: "100"
+                slots:
+                  default:
+                    - component: widget:gree_ac_widget
+                      config:
+                        deviceName: AirConditioner Room2
+                        item: groupItemAC2_room2
+masonry: []
+grid: []
+canvas: []
+ 

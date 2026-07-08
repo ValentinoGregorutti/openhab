@@ -1,0 +1,267 @@
+uid: gree_ac_widget
+tags: []
+props:
+  parameters:
+    - context: item
+      label: AC Group Item
+      name: item
+      required: true
+      type: TEXT
+    - default: AirConditioner
+      label: Device name
+      name: deviceName
+      required: false
+      type: TEXT
+timestamp: Apr 8, 2026, 6:36:26 PM
+component: oh-context
+config:
+  style:
+    bgColor: '=(vars.power == "ON" ? (vars.mode == 1 ? "linear-gradient(135deg,
+      rgba(0,150,255,0.15), rgba(0,150,255,0.05))" : (vars.mode == 4 ?
+      "linear-gradient(135deg, rgba(255,80,80,0.15), rgba(255,80,80,0.05))" :
+      "rgba(200,200,200,0.08)")) : "rgba(120,120,120,0.05)")'
+    border-radius: 16px
+    overflow: hidden
+  variables:
+    acId: =props.item.match(/AC\d+/)[0]
+    mode: =Number((vars.acId + "_Mode").state)
+    power: =vars.acId + "_Power".state
+slots:
+  default:
+    - component: oh-context
+    - component: f7-card-header
+      config:
+        style:
+          align-items: center
+          display: flex
+          justify-content: space-between
+      slots:
+        default:
+          - component: Label
+            config:
+              style:
+                font-size: 30px
+                font-weight: 600
+              text: =props.deviceName
+          - component: f7-row
+            config:
+              style:
+                align-items: center
+                display: flex
+                gap: 10px
+            slots:
+              default:
+                - component: oh-icon
+                  config:
+                    icon: '=(vars.power == "ON" ? (vars.mode == 1 ? "f7:snow" : (vars.mode == 4 ?
+                      "f7:flame" : (vars.mode == 3 ? "f7:fan" : "f7:gear"))) :
+                      "f7:power")'
+                    style:
+                      color: '=vars.power == "ON" ? (vars.mode == 1 ? "#0096ff" : vars.mode == 4 ?
+                        "#ff5050" : "#888") : "#999"'
+                      transform: '=vars.mode == 3 && vars.power == "ON" ? "rotate(360deg)" : ""'
+                      transition: transform 1s linear
+                - component: oh-toggle
+                  config:
+                    item: =vars.acId + "_Power"
+    - component: f7-card-content
+      config:
+        style:
+          align-items: center
+          justify-content: space-between
+          padding: 12px
+      slots:
+        default:
+          - component: f7-card
+            config:
+              style:
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+            slots:
+              default:
+                - component: f7-col
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          style:
+                            display: flex
+                            font-size: 11px
+                            opacity: 0.7
+                          text: Target
+                      - component: Label
+                        config:
+                          style:
+                            display: flex
+                            font-size: 30px
+                            font-weight: bold
+                          text: =items[vars.acId + "_Temperature"].displayState
+                - component: f7-col
+                  slots:
+                    default:
+                      - component: Label
+                        config:
+                          style:
+                            font-size: 11px
+                            opacity: 0.7
+                          text: Actual
+                      - component: Label
+                        config:
+                          style:
+                            display: flex
+                          text: =items[vars.acId + "_CurrentTemperature"].displayState
+                - component: f7-col
+                  slots:
+                    default:
+                      - component: oh-stepper
+                        config:
+                          fill: false
+                          item: =vars.acId + "_Temperature"
+                          large: true
+                          max: 30
+                          min: 16
+                          raised: false
+                          round: false
+                          small: false
+                          style:
+                            display: flex
+          - component: widget:aircon-mode-widget
+            config:
+              item: =vars.acId + "_Mode"
+              label: Mode
+          - component: f7-block
+            config:
+              style:
+                align-items: baseline
+                display: flex
+                justify-content: space-between
+                margin: 0
+                padding: 4px 0 2px 0
+            slots:
+              default:
+                - component: Label
+                  config:
+                    style:
+                      color: var(--f7-block-title-text-color)
+                      fontSize: 11px
+                      fontWeight: 500
+                      opacity: 0.7
+                    text: Fan speed
+                - component: Label
+                  config:
+                    style:
+                      color: var(--f7-block-title-text-color)
+                      fontSize: 11px
+                      opacity: 0.9
+                    text: =items[vars.acId + "_WindSpeed"].displayState
+          - component: oh-slider
+            config:
+              item: =vars.acId + "_WindSpeed"
+              label: true
+              max: 5
+              min: 0
+              step: 1
+          - component: f7-block
+            config:
+              style:
+                align-items: baseline
+                display: flex
+                justify-content: space-between
+                margin: 0
+                padding: 4px 0 2px 0
+            slots:
+              default:
+                - component: Label
+                  config:
+                    style:
+                      color: var(--f7-block-title-text-color)
+                      fontSize: 11px
+                      fontWeight: 500
+                      opacity: 0.7
+                    text: Up/Dn swing
+                - component: Label
+                  config:
+                    style:
+                      color: var(--f7-block-title-text-color)
+                      fontSize: 11px
+                      opacity: 0.9
+                    text: =items[vars.acId + "_SwingUpDown"].displayState
+          - component: oh-slider
+            config:
+              item: =vars.acId + "_SwingUpDown"
+              label: true
+              max: 6
+              min: 0
+              step: 1
+          - component: f7-block
+            config:
+              style:
+                align-items: baseline
+                display: flex
+                justify-content: space-between
+                margin: 0
+                padding: 4px 0 2px 0
+            slots:
+              default:
+                - component: Label
+                  config:
+                    style:
+                      color: var(--f7-block-title-text-color)
+                      fontSize: 11px
+                      fontWeight: 500
+                      opacity: 0.7
+                    text: Left/Right swing
+                - component: Label
+                  config:
+                    style:
+                      color: var(--f7-block-title-text-color)
+                      fontSize: 11px
+                      opacity: 0.9
+                    text: =items[vars.acId + "_SwingLeftRight"].displayState
+          - component: oh-slider
+            config:
+              item: =vars.acId + "_SwingLeftRight"
+              label: true
+              max: 6
+              min: 0
+              step: 1
+          - component: f7-row
+            config:
+              style:
+                display: grid
+                gap: 6px
+                grid-template-columns: 1fr 1fr
+                margin-top: 10px
+            slots:
+              default:
+                - component: oh-toggle-item
+                  config:
+                    item: =vars.acId + "_Health"
+                    title: Sanification
+                - component: oh-toggle-item
+                  config:
+                    item: =vars.acId + "_Turbo"
+                    title: Turbo fan
+                - component: oh-toggle-item
+                  config:
+                    item: =vars.acId + "_PowerSave"
+                    title: Powersave
+                - component: oh-toggle-item
+                  config:
+                    item: =vars.acId + "_Air"
+                    title: X-Fan
+                - component: oh-toggle-item
+                  config:
+                    item: =vars.acId + "_Dry"
+                    title: Dry
+                - component: oh-toggle-item
+                  config:
+                    item: =vars.acId + "_Light"
+                    title: Light
+          - component: widget:aircon-quiet-widget
+            config:
+              item: =vars.acId + "_Quiet"
+              label: Quiet
+
+              
