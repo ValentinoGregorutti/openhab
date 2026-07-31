@@ -162,6 +162,8 @@ slots:
               max: 5
               min: 0
               step: 1
+              releaseOnly: true
+              ignoreDisplayState: true
           - component: f7-block
             config:
               style:
@@ -194,6 +196,8 @@ slots:
               max: 6
               min: 0
               step: 1
+              releaseOnly: true
+              ignoreDisplayState: true
           - component: f7-block
             config:
               style:
@@ -226,6 +230,8 @@ slots:
               max: 6
               min: 0
               step: 1
+              releaseOnly: true
+              ignoreDisplayState: true
           - component: f7-row
             config:
               style:
