@@ -1,0 +1,73 @@
+version: 1
+widgets:
+  aircon-quiet-widget:
+    tags: []
+    props:
+      parameters:
+        - context: item
+          description: Quiet item (String type)
+          label: Item
+          name: item
+          required: true
+          type: TEXT
+    component: f7-card
+    config:
+      padding: false
+    slots:
+      default:
+        - component: f7-card-content
+          config:
+            padding: true
+          slots:
+            default:
+              - component: f7-segmented
+                config:
+                  style:
+                    display: flex
+                    flex-wrap: nowrap
+                    width: 100%
+                  tag: div
+                slots:
+                  default:
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: off
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'off' ? 'gray' : 'gray'"
+                        fill: =items[props.item].state === 'off'
+                        outline: true
+                        style:
+                          flex: 1
+                          fontSize: "=items[props.item].state === 'off' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'off' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'off' ? 1 : 0.25"
+                        text: 🔊 Quiet OFF
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: auto
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'auto' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === 'auto'
+                        outline: true
+                        style:
+                          flex: 1
+                          fontSize: "=items[props.item].state === 'auto' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'auto' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'auto' ? 1 : 0.25"
+                        text: Ⓐ Auto
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: quiet
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'quiet' ? 'purple' : 'gray'"
+                        fill: =items[props.item].state === 'quiet'
+                        outline: true
+                        style:
+                          flex: 1
+                          fontSize: "=items[props.item].state === 'quiet' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'quiet' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'quiet' ? 1 : 0.25"
+                        text: 🔇 Quiet
