@@ -1,0 +1,140 @@
+version: 1
+widgets:
+  aircon-windspeed-widget:
+    tags: []
+    props:
+      parameters:
+        - context: item
+          description: WindSpeed item (Number type)
+          label: Item
+          name: item
+          required: true
+          type: TEXT
+    component: f7-card
+    config:
+      padding: false
+    slots:
+      default:
+        - component: f7-card-content
+          config:
+            style:
+              padding: 12px 12px 16px 12px
+          slots:
+            default:
+              - component: Label
+                config:
+                  style:
+                    display: block
+                    fontSize: 11px
+                    opacity: 0.7
+                    marginBottom: 6px
+                    textAlign: center
+                    width: 100%
+                    color: var(--f7-theme-color)
+                  text: Velocità ventola
+              - component: f7-block
+                config:
+                  style:
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 6px
+                    margin: 0
+                    padding: 0
+                slots:
+                  default:
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: "0"
+                        actionItem: =props.item
+                        color: "=items[props.item].state === '0' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === '0'
+                        outline: true
+                        text: Auto
+                        style:
+                          flex: 1.5 1 105px
+                          minWidth: 105px
+                          padding: 10px 4px
+                          fontSize: "=items[props.item].state === '0' ? '15px' : '12px'"
+                          fontWeight: "=items[props.item].state === '0' ? '700' : '400'"
+                          opacity: "=items[props.item].state === '0' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: "1"
+                        actionItem: =props.item
+                        color: "=items[props.item].state === '1' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === '1'
+                        outline: true
+                        text: Bassa
+                        style:
+                          flex: 1 1 70px
+                          minWidth: 70px
+                          padding: 10px 2px
+                          fontSize: "=items[props.item].state === '1' ? '13px' : '11px'"
+                          fontWeight: "=items[props.item].state === '1' ? '700' : '400'"
+                          opacity: "=items[props.item].state === '1' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: "2"
+                        actionItem: =props.item
+                        color: "=items[props.item].state === '2' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === '2'
+                        outline: true
+                        text: Medio-bassa
+                        style:
+                          flex: 1 1 70px
+                          minWidth: 70px
+                          padding: 10px 2px
+                          fontSize: "=items[props.item].state === '2' ? '13px' : '11px'"
+                          fontWeight: "=items[props.item].state === '2' ? '700' : '400'"
+                          opacity: "=items[props.item].state === '2' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: "3"
+                        actionItem: =props.item
+                        color: "=items[props.item].state === '3' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === '3'
+                        outline: true
+                        text: Media
+                        style:
+                          flex: 1 1 70px
+                          minWidth: 70px
+                          padding: 10px 2px
+                          fontSize: "=items[props.item].state === '3' ? '13px' : '11px'"
+                          fontWeight: "=items[props.item].state === '3' ? '700' : '400'"
+                          opacity: "=items[props.item].state === '3' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: "4"
+                        actionItem: =props.item
+                        color: "=items[props.item].state === '4' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === '4'
+                        outline: true
+                        text: Medio-alta
+                        style:
+                          flex: 1 1 70px
+                          minWidth: 70px
+                          padding: 10px 2px
+                          fontSize: "=items[props.item].state === '4' ? '13px' : '11px'"
+                          fontWeight: "=items[props.item].state === '4' ? '700' : '400'"
+                          opacity: "=items[props.item].state === '4' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: "5"
+                        actionItem: =props.item
+                        color: "=items[props.item].state === '5' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === '5'
+                        outline: true
+                        text: Alta
+                        style:
+                          flex: 1 1 70px
+                          minWidth: 70px
+                          padding: 10px 2px
+                          fontSize: "=items[props.item].state === '5' ? '13px' : '11px'"
+                          fontWeight: "=items[props.item].state === '5' ? '700' : '400'"
+                          opacity: "=items[props.item].state === '5' ? 1 : 0.25"
