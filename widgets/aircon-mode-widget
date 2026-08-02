@@ -1,0 +1,141 @@
+version: 1
+widgets:
+  aircon-mode-widget:
+    tags: []
+    props:
+      parameters:
+        - context: item
+          description: The item to control (String type)
+          label: Item
+          name: item
+          required: true
+          type: TEXT
+        - default: Mode
+          description: Label displayed above the buttons
+          label: Label
+          name: label
+          required: false
+          type: TEXT
+    component: f7-card
+    config:
+      padding: false
+    slots:
+      default:
+        - component: f7-card-content
+          config:
+            padding: true
+          slots:
+            default:
+              - component: f7-block
+                config:
+                  style:
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 6px
+                    margin: 0
+                    padding: 4px 0
+                slots:
+                  default:
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: auto
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'auto' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === 'auto'
+                        outline: true
+                        text: Ⓐ Automatico
+                        style:
+                          fontSize: "=items[props.item].state === 'auto' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'auto' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'auto' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: cool
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'cool' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === 'cool'
+                        outline: true
+                        text: ❄️ Raffrescamento
+                        style:
+                          fontSize: "=items[props.item].state === 'cool' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'cool' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'cool' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: eco
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'eco' ? 'green' : 'gray'"
+                        fill: =items[props.item].state === 'eco'
+                        outline: true
+                        text: 🌿 Eco
+                        style:
+                          fontSize: "=items[props.item].state === 'eco' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'eco' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'eco' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: dry
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'dry' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === 'dry'
+                        outline: true
+                        text: 💧 Demudificazione
+                        style:
+                          fontSize: "=items[props.item].state === 'dry' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'dry' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'dry' ? 1 : 0.25"
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: fan
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'fan' ? 'blue' : 'gray'"
+                        fill: =items[props.item].state === 'fan'
+                        outline: true
+                        style:
+                          opacity: "=items[props.item].state === 'fan' ? 1 : 0.25"
+                      slots:
+                        default:
+                          - component: f7-row
+                            config:
+                              style:
+                                align-items: center
+                                display: flex
+                                flex-direction: row
+                                flex-wrap: nowrap
+                                gap: 6px
+                                justify-content: center
+                            slots:
+                              default:
+                                - component: oh-icon
+                                  config:
+                                    icon: iconify:mingcute:fan-fill
+                                    style:
+                                      flex-shrink: 0
+                                      height: 22px
+                                      width: 22px
+                                - component: Label
+                                  config:
+                                    style:
+                                      color: inherit
+                                      white-space: nowrap
+                                      fontSize: "=items[props.item].state === 'fan' ? '14px' : '12px'"
+                                      fontWeight: "=items[props.item].state === 'fan' ? '700' : '400'"
+                                    text: Ventilazione
+                    - component: oh-button
+                      config:
+                        action: command
+                        actionCommand: heat
+                        actionItem: =props.item
+                        color: "=items[props.item].state === 'heat' ? 'red' : 'gray'"
+                        fill: =items[props.item].state === 'heat'
+                        outline: true
+                        text: 🔥 Riscaldamento
+                        style:
+                          fontSize: "=items[props.item].state === 'heat' ? '14px' : '12px'"
+                          fontWeight: "=items[props.item].state === 'heat' ? '700' : '400'"
+                          opacity: "=items[props.item].state === 'heat' ? 1 : 0.25"
