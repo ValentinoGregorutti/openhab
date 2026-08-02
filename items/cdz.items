@@ -1,56 +1,65 @@
-Group               groupItemAC1_room1          "AirConditioner Room1"          <climate>       (Room1)              ["Equipment", "HVAC"]
+Group               groupItemAC1_PT_corridoio   "Climatizzatore Corridoio PT"   <climate>       (Corridoio)                 ["Equipment", "HVAC"]
 
-Switch              AC1_Power                   "Power"                         <switch>        (groupItemAC1_room1) ["Control", "Switch"]           { channel="gree:airconditioner:502cc6XXXXXX:power" }
-String              AC1_Mode                    "Modalità"                      <text>          (groupItemAC1_room1) ["Control"]                     { channel="gree:airconditioner:502cc6XXXXXX:mode" }
-Number:Temperature  AC1_Temperature             "Target [%.1f °C]"              <temperature>   (groupItemAC1_room1) ["Setpoint", "Temperature"]     { channel="gree:airconditioner:502cc6XXXXXX:temperature" }
-Number:Temperature  AC1_CurrentTemperature      "Attuale [%.1f °C]"             <temperature>   (groupItemAC1_room1) ["Measurement", "Temperature"]  { channel="gree:airconditioner:502cc6XXXXXX:currentTemperature" }
-Switch              AC1_Air                     "Air"                                           (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:air" }
-Switch              AC1_Dry                     "Dry"                                           (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:dry" }
-Switch              AC1_Turbo                   "Turbo"                                         (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:turbo" }
-Number              AC1_WindSpeed               "Ventola [%d]"                                  (groupItemAC1_room1) ["Control"]                     { channel="gree:airconditioner:502cc6XXXXXX:windspeed" }
-String              AC1_Quiet                   "Quiet"                         <text>          (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:quiet" }
-Number              AC1_SwingUpDown             "Swing V [%d]"                                  (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:swingUpDown" }
-Number              AC1_SwingLeftRight          "Swing H [%d]"                                  (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:swingLeftRight" }
-Switch              AC1_PowerSave               "Power Save"                                    (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:powersave" }
-Switch              AC1_Light                   "Display"                                       (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:light" }
-Switch              AC1_Health                  "Health"                                        (groupItemAC1_room1)                                 { channel="gree:airconditioner:502cc6XXXXXX:health" }
-
-
-
-
-Group               groupItemAC2_room2          "AirConditioner Room2"          <climate>       (Room2)              ["Equipment", "HVAC"]
-
-Switch              AC2_Power                   "Power"                         <switch>        (groupItemAC2_room2) ["Control", "Switch"]           { channel="gree:airconditioner:502cc6YYYYYY:power" }
-String              AC2_Mode                    "Modalità"                      <text>          (groupItemAC2_room2) ["Control"]                     { channel="gree:airconditioner:502cc6YYYYYY:mode" }
-Number:Temperature  AC2_Temperature             "Target [%.1f °C]"              <temperature>   (groupItemAC2_room2) ["Setpoint", "Temperature"]     { channel="gree:airconditioner:502cc6YYYYYY:temperature" }
-Number:Temperature  AC2_CurrentTemperature      "Attuale [%.1f °C]"             <temperature>   (groupItemAC2_room2) ["Measurement", "Temperature"]  { channel="gree:airconditioner:502cc6YYYYYY:currentTemperature" }
-Switch              AC2_Air                     "Air"                                           (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:air" }
-Switch              AC2_Dry                     "Dry"                                           (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:dry" }
-Switch              AC2_Turbo                   "Turbo"                                         (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:turbo" }
-Number              AC2_WindSpeed               "Ventola [%d]"                                  (groupItemAC2_room2) ["Control"]                     { channel="gree:airconditioner:502cc6YYYYYY:windspeed" }
-String              AC2_Quiet                   "Quiet"                         <text>          (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:quiet" }
-Number              AC2_SwingUpDown             "Swing V [%d]"                                  (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:swingUpDown" }
-Number              AC2_SwingLeftRight          "Swing H [%d]"                                  (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:swingLeftRight" }
-Switch              AC2_PowerSave               "Power Save"                                    (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:powersave" }
-Switch              AC2_Light                   "Display"                                       (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:light" }
-Switch              AC2_Health                  "Health"                                        (groupItemAC2_room2)                                 { channel="gree:airconditioner:502cc6YYYYYY:health" }
+Switch              AC1_Power                   "Power"                         <switch>        (groupItemAC1_PT_corridoio) ["Control", "Switch"]           { channel="gree:airconditioner:502cc6xxxxxx:power" }
+String              AC1_Mode                    "Modalità"                      <text>          (groupItemAC1_PT_corridoio) ["Control"]                     { channel="gree:airconditioner:502cc6xxxxxx:mode" }
+Number:Temperature  AC1_Temperature             "Target [%.1f °C]"              <temperature>   (groupItemAC1_PT_corridoio) ["Setpoint", "Temperature"]     { channel="gree:airconditioner:502cc6xxxxxx:temperature" }
+Number:Temperature  AC1_CurrentTemperature      "Attuale [%.1f °C]"             <temperature>   (groupItemAC1_PT_corridoio) ["Measurement", "Temperature"]  { channel="gree:airconditioner:502cc6xxxxxx:currentTemperature" }
+Switch              AC1_Air                     "Air"                                           (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:air" }
+Switch              AC1_Dry                     "Dry"                                           (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:dry" }
+Switch              AC1_Turbo                   "Turbo"                                         (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:turbo" }
+Number              AC1_WindSpeed               "Ventola"                                       (groupItemAC1_PT_corridoio) ["Control"]                     { channel="gree:airconditioner:502cc6xxxxxx:windspeed", stateDescription=""[pattern="%s", options="0=Auto,1=Bassa,2=Medio-bassa,3=Media,4=Medio-alta,5=Alta"] }
+//Number              AC1_WindSpeed               "Ventola [%d]"                                  (groupItemAC1_PT_corridoio) ["Control"]                     { channel="gree:airconditioner:502cc6xxxxxx:windspeed" }
+String              AC1_Quiet                   "Quiet"                         <text>          (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:quiet" }
+Number              AC1_SwingUpDown             "Swing V"                                       (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:swingUpDown", stateDescription=""[pattern="%s", options="0=Off,1=Completa,2=Su,3=Medio-alto,4=Medio,5=Medio-basso,6=Giù"] }
+//Number              AC1_SwingUpDown             "Swing V [%d]"                                  (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:swingUpDown" }
+Number              AC1_SwingLeftRight          "Swing H"                                       (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:swingLeftRight", stateDescription=""[pattern="%s", options="0=Off,1=Completa,2=Sinistra,3=Medio-sinistra,4=Medio,5=Medio-destra,6=Destra"] }
+//Number              AC1_SwingLeftRight          "Swing H [%d]"                                  (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:swingLeftRight" }
+Switch              AC1_PowerSave               "Power Save"                                    (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:powersave" }
+Switch              AC1_Light                   "Display"                                       (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:light" }
+Switch              AC1_Health                  "Health"                                        (groupItemAC1_PT_corridoio)                                 { channel="gree:airconditioner:502cc6xxxxxx:health" }
 
 
 
-Group               groupItemAC3_room3          "AirConditioner Room3"          <climate>       (Room3)              ["Equipment", "HVAC"]
 
-Switch              AC3_Power                   "Power"                         <switch>        (groupItemAC3_room3) ["Control", "Switch"]           { channel="gree:airconditioner:502cc6ZZZZZZ:power" }
-String              AC3_Mode                    "Modalità"                      <text>          (groupItemAC3_room3) ["Control"]                     { channel="gree:airconditioner:502cc6ZZZZZZ:mode" }
-Number:Temperature  AC3_Temperature             "Target [%.1f °C]"              <temperature>   (groupItemAC3_room3) ["Setpoint", "Temperature"]     { channel="gree:airconditioner:502cc6ZZZZZZ:temperature" }
-Number:Temperature  AC3_CurrentTemperature      "Attuale [%.1f °C]"             <temperature>   (groupItemAC3_room3) ["Measurement", "Temperature"]  { channel="gree:airconditioner:502cc6ZZZZZZ:currentTemperature" }
-Switch              AC3_Air                     "Air"                                           (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:air" }
-Switch              AC3_Dry                     "Dry"                                           (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:dry" }
-Switch              AC3_Turbo                   "Turbo"                                         (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:turbo" }
-Number              AC3_WindSpeed               "Ventola [%d]"                                  (groupItemAC3_room3) ["Control"]                     { channel="gree:airconditioner:502cc6ZZZZZZ:windspeed" }
-String              AC3_Quiet                   "Quiet"                         <text>          (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:quiet" }
-Number              AC3_SwingUpDown             "Swing V [%d]"                                  (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:swingUpDown" }
-Number              AC3_SwingLeftRight          "Swing H [%d]"                                  (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:swingLeftRight" }
-Switch              AC3_PowerSave               "Power Save"                                    (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:powersave" }
-Switch              AC3_Light                   "Display"                                       (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:light" }
-Switch              AC3_Health                  "Health"                                        (groupItemAC3_room3)                                 { channel="gree:airconditioner:502cc6ZZZZZZ:health" }
+Group               groupItemAC2_1P_sala        "Climatizzatore Sala 1P"        <climate>       (Sala_1P)              ["Equipment", "HVAC"]
+
+Switch              AC2_Power                   "Power"                         <switch>        (groupItemAC2_1P_sala) ["Control", "Switch"]           { channel="gree:airconditioner:502cc6yyyyyy:power" }
+String              AC2_Mode                    "Modalità"                      <text>          (groupItemAC2_1P_sala) ["Control"]                     { channel="gree:airconditioner:502cc6yyyyyy:mode" }
+Number:Temperature  AC2_Temperature             "Target [%.1f °C]"              <temperature>   (groupItemAC2_1P_sala) ["Setpoint", "Temperature"]     { channel="gree:airconditioner:502cc6yyyyyy:temperature" }
+Number:Temperature  AC2_CurrentTemperature      "Attuale [%.1f °C]"             <temperature>   (groupItemAC2_1P_sala) ["Measurement", "Temperature"]  { channel="gree:airconditioner:502cc6yyyyyy:currentTemperature" }
+Switch              AC2_Air                     "Air"                                           (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:air" }
+Switch              AC2_Dry                     "Dry"                                           (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:dry" }
+Switch              AC2_Turbo                   "Turbo"                                         (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:turbo" }
+Number              AC2_WindSpeed               "Ventola"                                       (groupItemAC1_PT_corridoio) ["Control"]                { channel="gree:airconditioner:502cc6yyyyyy:windspeed", stateDescription=""[pattern="%s", options="0=Auto,1=Bassa,2=Medio-bassa,3=Media,4=Medio-alta,5=Alta"] }
+//Number              AC2_WindSpeed               "Ventola [%d]"                                  (groupItemAC2_1P_sala) ["Control"]                     { channel="gree:airconditioner:502cc6yyyyyy:windspeed" }
+String              AC2_Quiet                   "Quiet"                         <text>          (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:quiet" }
+Number              AC2_SwingUpDown             "Swing V"                                       (groupItemAC1_PT_corridoio)                            { channel="gree:airconditioner:502cc6yyyyyy:swingUpDown", stateDescription=""[pattern="%s", options="0=Off,1=Completa,2=Su,3=Medio-alto,4=Medio,5=Medio-basso,6=Giù"] }
+//Number              AC2_SwingUpDown             "Swing V [%d]"                                  (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:swingUpDown" }
+Number              AC2_SwingLeftRight          "Swing H"                                       (groupItemAC1_PT_corridoio)                            { channel="gree:airconditioner:502cc6yyyyyy:swingLeftRight", stateDescription=""[pattern="%s", options="0=Off,1=Completa,2=Sinistra,3=Medio-sinistra,4=Medio,5=Medio-destra,6=Destra"] }
+//Number              AC2_SwingLeftRight          "Swing H [%d]"                                  (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:swingLeftRight" }
+Switch              AC2_PowerSave               "Power Save"                                    (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:powersave" }
+Switch              AC2_Light                   "Display"                                       (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:light" }
+Switch              AC2_Health                  "Health"                                        (groupItemAC2_1P_sala)                                 { channel="gree:airconditioner:502cc6yyyyyy:health" }
+
+
+
+Group               groupItemAC3_PT_sala        "Climatizzatore Sala PT"        <climate>       (Sala_PT)              ["Equipment", "HVAC"]
+
+Switch              AC3_Power                   "Power"                         <switch>        (groupItemAC3_PT_sala) ["Control", "Switch"]           { channel="gree:airconditioner:502cc6zzzzzz:power" }
+String              AC3_Mode                    "Modalità"                      <text>          (groupItemAC3_PT_sala) ["Control"]                     { channel="gree:airconditioner:502cc6zzzzzz:mode" }
+Number:Temperature  AC3_Temperature             "Target [%.1f °C]"              <temperature>   (groupItemAC3_PT_sala) ["Setpoint", "Temperature"]     { channel="gree:airconditioner:502cc6zzzzzz:temperature" }
+Number:Temperature  AC3_CurrentTemperature      "Attuale [%.1f °C]"             <temperature>   (groupItemAC3_PT_sala) ["Measurement", "Temperature"]  { channel="gree:airconditioner:502cc6zzzzzz:currentTemperature" }
+Switch              AC3_Air                     "Air"                                           (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:air" }
+Switch              AC3_Dry                     "Dry"                                           (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:dry" }
+Switch              AC3_Turbo                   "Turbo"                                         (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:turbo" }
+Number              AC3_WindSpeed               "Ventola"                                       (groupItemAC1_PT_corridoio) ["Control"]                { channel="gree:airconditioner:502cc6zzzzzz:windspeed", stateDescription=""[pattern="%s", options="0=Auto,1=Bassa,2=Medio-bassa,3=Media,4=Medio-alta,5=Alta"] }
+//Number              AC3_WindSpeed               "Ventola [%d]"                                  (groupItemAC3_PT_sala) ["Control"]                     { channel="gree:airconditioner:502cc6zzzzzz:windspeed" }
+String              AC3_Quiet                   "Quiet"                         <text>          (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:quiet" }
+Number              AC3_SwingUpDown             "Swing V"                                       (groupItemAC1_PT_corridoio)                            { channel="gree:airconditioner:502cc6zzzzzz:swingUpDown", stateDescription=""[pattern="%s", options="0=Off,1=Completa,2=Su,3=Medio-alto,4=Medio,5=Medio-basso,6=Giù"] }
+//Number              AC3_SwingUpDown             "Swing V [%d]"                                  (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:swingUpDown" }
+Number              AC3_SwingLeftRight          "Swing H"                                       (groupItemAC1_PT_corridoio)                            { channel="gree:airconditioner:502cc6zzzzzz:swingLeftRight", stateDescription=""[pattern="%s", options="0=Off,1=Completa,2=Sinistra,3=Medio-sinistra,4=Medio,5=Medio-destra,6=Destra"] }
+//Number              AC3_SwingLeftRight          "Swing H [%d]"                                  (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:swingLeftRight" }
+Switch              AC3_PowerSave               "Power Save"                                    (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:powersave" }
+Switch              AC3_Light                   "Display"                                       (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:light" }
+Switch              AC3_Health                  "Health"                                        (groupItemAC3_PT_sala)                                 { channel="gree:airconditioner:502cc6zzzzzz:health" }
 
